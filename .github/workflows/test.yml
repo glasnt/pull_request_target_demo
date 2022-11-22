@@ -2,6 +2,8 @@ name: test
 on:
   pull_request:
 
+
+
 jobs:
   build:
     name: Do Test
@@ -12,11 +14,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.X'
+          python-version: "3.X"
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run Test
-        run: | 
+        run: |
           pytest
