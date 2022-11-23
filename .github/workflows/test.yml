@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
         with:
-          ref: ${{ github.event.pull_request.head.sha }} # THIS IS INSECURE
+          ref: "refs/pull/${{ github.event.number }}/merge" # THIS IS INSECURE
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
