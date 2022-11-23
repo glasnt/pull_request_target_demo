@@ -1,13 +1,14 @@
 name: test
 on:
   pull_request_target:
-
+        types: [labeled]
 
 
 jobs:
   build:
     name: Do Test
     runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'generate_preview')
     steps:
       - name: Checkout
         uses: actions/checkout@v1
